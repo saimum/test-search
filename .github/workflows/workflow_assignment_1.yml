@@ -1,0 +1,19 @@
+name: "workflow_assignment_2 (show content of hello.txt in workflow's log)"
+
+on:
+ push:
+  branches:
+   - main
+
+jobs:
+ job-1:
+  name: "job-1: checout repository >> show content"
+  runs-on: ubuntu-latest
+  steps:
+   - name: "step-1.1: checout repository"
+     uses: actions/checkout@v4
+   
+   - name: "step-1.2: show content"
+     run: |
+      echo "content of hello.txt is showing below."
+      cat hello.txt
